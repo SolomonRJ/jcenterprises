@@ -13,9 +13,7 @@ export const Footer = () => {
               Your trusted partner for industrial steel and construction supplies. Quality products, timely delivery, competitive pricing.
             </p>
             <div className="flex items-center space-x-2 text-sm text-secondary-foreground/80">
-              <span className="font-semibold">Est. 2010</span>
-              <span>|</span>
-              <span>15+ Years</span>
+              <span className="font-semibold">Est. 2025</span>
             </div>
           </div>
 
@@ -61,17 +59,17 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <div className="flex flex-col space-y-3">
-              <a href="tel:+911234567890" className="flex items-center space-x-2 text-sm text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">
+              <a href="tel:+919845304327" className="flex items-center space-x-2 text-sm text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">
                 <Phone className="h-4 w-4" />
-                <span>+91 123 456 7890</span>
+                <span>+91 98453 04327</span>
               </a>
-              <a href="mailto:info@jcenterprises.com" className="flex items-center space-x-2 text-sm text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">
+              <a href="mailto:jcenterprises306@gmail.com" className="flex items-center space-x-2 text-sm text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">
                 <Mail className="h-4 w-4" />
-                <span>info@jcenterprises.com</span>
+                <span>jcenterprises306@gmail.com</span>
               </a>
               <div className="flex items-start space-x-2 text-sm text-secondary-foreground/80">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                <span>Industrial Area, Phase-II<br />Sector 17, Delhi - 110020</span>
+                <span>Bommasandra Industrial Area<br />Kanchanayakana Halli Village<br />Bengaluru - 560099</span>
               </div>
             </div>
             <div className="mt-4 pt-4 border-t border-secondary-foreground/20">

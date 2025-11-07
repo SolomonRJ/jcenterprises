@@ -76,8 +76,8 @@ const Contact = () => {
                   <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <div className="font-medium mb-1">Phone</div>
-                    <a href="tel:+911234567890" className="text-sm text-muted-foreground hover:text-foreground">
-                      +91 123 456 7890
+                    <a href="tel:+919845304327" className="text-sm text-muted-foreground hover:text-foreground">
+                      +91 98453 04327
                     </a>
                   </div>
                 </div>
@@ -85,8 +85,8 @@ const Contact = () => {
                   <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <div className="font-medium mb-1">Email</div>
-                    <a href="mailto:info@jcenterprises.com" className="text-sm text-muted-foreground hover:text-foreground">
-                      info@jcenterprises.com
+                    <a href="mailto:jcenterprises306@gmail.com" className="text-sm text-muted-foreground hover:text-foreground">
+                      jcenterprises306@gmail.com
                     </a>
                   </div>
                 </div>
@@ -95,8 +95,9 @@ const Contact = () => {
                   <div>
                     <div className="font-medium mb-1">Address</div>
                     <p className="text-sm text-muted-foreground">
-                      Industrial Area, Phase-II<br />
-                      Sector 17, Delhi - 110020<br />
+                      Bommasandra Industrial Area<br />
+                      Kanchanayakana Halli Village<br />
+                      Bengaluru - 560099<br />
                       India
                     </p>
                   </div>
