@@ -12,9 +12,9 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState(searchParams.get("category") || "");
-  const [selectedSubcategory, setSelectedSubcategory] = useState("");
-  const [selectedMaterial, setSelectedMaterial] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(searchParams.get("category") || "all");
+  const [selectedSubcategory, setSelectedSubcategory] = useState("all");
+  const [selectedMaterial, setSelectedMaterial] = useState("all");
 
   // Get unique materials
   const materials = useMemo(() => {
@@ -45,17 +45,17 @@ const Products = () => {
       }
 
       // Category filter
-      if (selectedCategory && product.category !== selectedCategory) {
+      if (selectedCategory && selectedCategory !== "all" && product.category !== selectedCategory) {
         return false;
       }
 
       // Subcategory filter
-      if (selectedSubcategory && product.subcategory !== selectedSubcategory) {
+      if (selectedSubcategory && selectedSubcategory !== "all" && product.subcategory !== selectedSubcategory) {
         return false;
       }
 
       // Material filter
-      if (selectedMaterial && product.material !== selectedMaterial) {
+      if (selectedMaterial && selectedMaterial !== "all" && product.material !== selectedMaterial) {
         return false;
       }
 
@@ -65,13 +65,13 @@ const Products = () => {
 
   const clearFilters = () => {
     setSearchQuery("");
-    setSelectedCategory("");
-    setSelectedSubcategory("");
-    setSelectedMaterial("");
+    setSelectedCategory("all");
+    setSelectedSubcategory("all");
+    setSelectedMaterial("all");
     setSearchParams({});
   };
 
-  const hasActiveFilters = searchQuery || selectedCategory || selectedSubcategory || selectedMaterial;
+  const hasActiveFilters = searchQuery || (selectedCategory && selectedCategory !== "all") || (selectedSubcategory && selectedSubcategory !== "all") || (selectedMaterial && selectedMaterial !== "all");
 
   const FilterControls = () => (
     <div className="space-y-6">
@@ -96,13 +96,13 @@ const Products = () => {
         <Label htmlFor="category">Category</Label>
         <Select value={selectedCategory} onValueChange={(value) => {
           setSelectedCategory(value);
-          setSelectedSubcategory("");
+          setSelectedSubcategory("all");
         }}>
           <SelectTrigger id="category">
             <SelectValue placeholder="All Categories" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Categories</SelectItem>
+            <SelectItem value="all">All Categories</SelectItem>
             {categories.map((cat) => (
               <SelectItem key={cat.name} value={cat.name}>
                 {cat.name}
@@ -121,7 +121,7 @@ const Products = () => {
               <SelectValue placeholder="All Subcategories" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Subcategories</SelectItem>
+              <SelectItem value="all">All Subcategories</SelectItem>
               {subcategories.map((sub) => (
                 <SelectItem key={sub} value={sub}>
                   {sub}
@@ -140,7 +140,7 @@ const Products = () => {
             <SelectValue placeholder="All Materials" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Materials</SelectItem>
+            <SelectItem value="all">All Materials</SelectItem>
             {materials.map((mat) => (
               <SelectItem key={mat} value={mat}>
                 {mat}

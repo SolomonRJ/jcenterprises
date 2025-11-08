@@ -4,6 +4,7 @@ import { NavLink } from "@/components/NavLink";
 import { Search, Menu, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,8 +15,9 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl md:text-3xl font-bold tracking-tighter">
+          <Link to="/" className="flex items-center space-x-3">
+            <img src={logo} alt="J C Enterprises Logo" className="h-10 w-10 md:h-12 md:w-12 object-contain" />
+            <div className="text-xl md:text-2xl font-bold tracking-tighter">
               J C ENTERPRISES
             </div>
           </Link>
